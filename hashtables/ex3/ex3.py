@@ -3,7 +3,21 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    numbers = {}
+    needed = len(arrays)
+    result = []
 
+    for array in arrays: #  for each array in main array
+        for item in array: # for each number in each sub array
+            if item not in numbers:
+                numbers[item] = 1
+            else:
+                numbers[item] += 1
+
+    for number in numbers:
+        if numbers[number] == needed:
+            result.append(number)
+            
     return result
 
 
